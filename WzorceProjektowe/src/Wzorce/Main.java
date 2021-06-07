@@ -19,6 +19,16 @@ public class Main {
         
         //---MOST---
         
+        //---PELNOMOCNIK---
+        
+        Pelnomocnik p1 = new Pelnomocnik("zlehaslo");
+        System.out.print(p1.PobierzDane());
+        System.out.print("\n");
+        Pelnomocnik p2 = new Pelnomocnik("zlehaslo");
+        System.out.print(p2.PobierzDane());
+        System.out.print("\n");
+        
+        //---PELNOMOCNIK---
     }
 }
 

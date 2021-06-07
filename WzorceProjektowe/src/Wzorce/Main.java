@@ -1,5 +1,7 @@
 package Wzorce;
 
+import java.util.ArrayList;
+
 /**
  * @author mk0czewsk11
  */
@@ -7,7 +9,7 @@ package Wzorce;
 public class Main {
     public static void main(String[] args) {
         
-        //---MOST---
+        //---MOST---Most.java
         
         MostAbstrakcja m = new MostAbstrakcjaPochodna();
         m.most = new SpecyficznyMost();
@@ -18,7 +20,7 @@ public class Main {
         
         //---MOST---
         
-        //---PELNOMOCNIK---
+        //---PELNOMOCNIK---Folder.java
         
         Pelnomocnik p1 = new Pelnomocnik("zlehaslo");
         System.out.println(p1.PobierzDane());        
@@ -28,7 +30,7 @@ public class Main {
         
         //---PELNOMOCNIK---
         
-        //---KOMPOZYT---
+        //---KOMPOZYT---Element.java
         
         Kompozyt root = new Kompozyt("root");
         root.Dodaj(new Lisc("Lisc A"));
@@ -46,9 +48,66 @@ public class Main {
         root.Usun(leaf);
         
         root.Pokaz(1);
+        System.out.print("\n");
+        
+        //---KOMPOZYT---
+        
+        //---METODA_SZABLONOWA---Szablon.java
+        
+        Szablon sA = new SzablonA();
+        Szablon sB = new SzablonB();
+        
+        sA.Wykonaj();
+        sB.Wykonaj();
+        
+        System.out.print("\n");
+        
+        //---METODA_SZABLONOWA---
+        
+        //---OBSERWATOR---Obserwator.java
+        
+        SpecyficznyObserwowany s = new SpecyficznyObserwowany();
+        
+        s.DodajObserwatora(new SpecyficznyObserwator(s, "X"));
+        s.DodajObserwatora(new SpecyficznyObserwator(s, "Y"));
+        s.DodajObserwatora(new SpecyficznyObserwator(s, "Z"));
+        
+        s.StanObserwowanego = "ABC";        
+        
+        s.Powiadom();
+        
         System.out.print("\n");        
         
+        //---OBSERWATOR---
         
+        //---POLECENIE---Polecenie.java
+        
+        Odbiorca odbiorca = new Odbiorca();
+        Polecenie polecenie = new SpecyficznePolecenie(odbiorca);
+        ObiektWywolujacy wywolujacy = new ObiektWywolujacy();
+        
+        wywolujacy.UstawPolecenie(polecenie);
+        wywolujacy.WykonajPolecenie();
+        
+        System.out.println("\n");
+        
+        //---POLECENIE
+        
+        //---INTERPRETER---Kontekst.java
+        
+        Kontekst kontekst = new Kontekst();
+        WyrazenieAbstrakcyjne wyrazenie;
+        
+        wyrazenie = new WyrazenieTerminalne();
+        wyrazenie.Interpretuj(kontekst);
+        wyrazenie = new WyrazenieNieTerminalne();
+        wyrazenie.Interpretuj(kontekst);
+        wyrazenie = new WyrazenieTerminalne();
+        wyrazenie.Interpretuj(kontekst);
+        
+        System.out.println("\n");
+        
+        //---INTERPRETER---
     }
 }
 

@@ -23,14 +23,4 @@ public class Singleton {
        
        return INSTANCJA;
    }
-   
-    public static void main(String args[]) {
-        
-        Singleton singleton1 = Singleton.zwrocInstancje();
-        Singleton singleton2 = Singleton.zwrocInstancje();
-        
-        if(singleton1 == singleton2){
-            System.out.println("Oba obiekty to ta sama instancja");
-        }
-    }
 }

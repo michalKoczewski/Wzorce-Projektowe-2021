@@ -27,6 +27,13 @@ class Produkt {
     }
 }
 
+public abstract class Budowniczy {
+
+    public abstract void ZlozCzescA();
+    public abstract void ZlozCzescB();
+    public abstract Produkt ZwrocProdukt();
+}
+
 class BudowniczyXY extends Budowniczy {
     private Produkt _produkt = new Produkt();
     public void ZlozCzescA() {
@@ -61,25 +68,5 @@ class Kierownik {
     public void Skladaj(Budowniczy budowniczy) {
         budowniczy.ZlozCzescA();
         budowniczy.ZlozCzescB();
-    }
-}
-
-public abstract class Budowniczy {
-
-    public abstract void ZlozCzescA();
-    public abstract void ZlozCzescB();
-    public abstract Produkt ZwrocProdukt();
-    
-    public static void main(String args[]) {
-        
-        Kierownik kierownik = new Kierownik();
-        Budowniczy budowniczy1 = new BudowniczyQW();
-        Budowniczy budowniczy2 = new BudowniczyXY();
-        
-        kierownik.Skladaj(budowniczy1);
-        budowniczy1.ZwrocProdukt().Pokaz();
-        
-        kierownik.Skladaj(budowniczy2);
-        budowniczy2.ZwrocProdukt().Pokaz();
     }
 }

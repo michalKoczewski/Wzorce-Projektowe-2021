@@ -7,6 +7,31 @@ package Wzorce;
 public class Main {
     public static void main(String[] args) {
         
+        //---SINGLETON---
+        
+        Singleton singleton1 = Singleton.zwrocInstancje();
+        Singleton singleton2 = Singleton.zwrocInstancje();
+        
+        if(singleton1 == singleton2){
+            System.out.println("Oba obiekty to ta sama instancja");
+        }
+        
+        //--SINGLETON---
+        
+        //---BUDOWNICZY---
+        
+        Kierownik kierownik = new Kierownik();
+        Budowniczy budowniczy1 = new BudowniczyQW();
+        Budowniczy budowniczy2 = new BudowniczyXY();
+        
+        kierownik.Skladaj(budowniczy1);
+        budowniczy1.ZwrocProdukt().Pokaz();
+        
+        kierownik.Skladaj(budowniczy2);
+        budowniczy2.ZwrocProdukt().Pokaz();
+        
+        //---BUDOWNICZY---
+
         //---MOST---
         
         MostAbstrakcja m = new MostAbstrakcjaPochodna();
@@ -29,6 +54,7 @@ public class Main {
         System.out.print("\n");
         
         //---PELNOMOCNIK---
+       
     }
 }
 

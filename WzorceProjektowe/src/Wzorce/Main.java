@@ -19,53 +19,19 @@ public class Main {
         
         //---MOST---
         
+        //---PELNOMOCNIK---
+        
+        Pelnomocnik p1 = new Pelnomocnik("zlehaslo");
+        System.out.print(p1.PobierzDane());
+        System.out.print("\n");
+        Pelnomocnik p2 = new Pelnomocnik("zlehaslo");
+        System.out.print(p2.PobierzDane());
+        System.out.print("\n");
+        
+        //---PELNOMOCNIK---
     }
 }
 
 
-//---MOST---START---
 
-abstract class Most {
-    public abstract void MostImplementacja();
-}
 
-class MostAbstrakcja {
-    protected Most most;
-    
-    public void SetMost(Most most) {
-        this.most = most;
-    }
-    
-    public void MostImplementacja() {
-        most.MostImplementacja();
-    }
-}
-
-class MostAbstrakcjaPochodna extends MostAbstrakcja { 
-    @Override
-    public void MostImplementacja() {
-        most.MostImplementacja();
-    }
-}
-
-class SpecyficznyMost extends Most {
-    @Override
-    public void MostImplementacja() {
-        System.out.print("SpecyficznyMost MostImplementacja");
-    }
-}
-
-class InnyMost extends Most {
-    @Override
-    public void MostImplementacja() {
-        System.out.print("InnyMost MostImplementacja");
-    }           
-}
-
-//---MOST---END---
-
-//---PEŁNOMOCNIK---START---
-
-abstract class Pelnomocnik {
-    public abstract string PobierzDane(); 
-}

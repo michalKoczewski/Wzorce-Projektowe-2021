@@ -17,7 +17,7 @@ class KonkretnyFolder extends Folder{
     private final String Dane;
 
     public KonkretnyFolder(){
-        System.out.print("KonkretnyPelnomocnik: Uruchomiony");
+        System.out.println("KonkretnyPelnomocnik: Uruchomiony");
         Dane = "01000100 01000001 01001110 01000101" ;
     }
     
@@ -35,7 +35,7 @@ class Pelnomocnik extends Folder {
     public Pelnomocnik(String haslo) {
         if (haslo.equals(this.haslo)) {
             autoryzowany = true;
-            System.out.print("Pelnomocnik: Uruchomiony");
+            System.out.println("Pelnomocnik: Uruchomiony");
         }
     }
     

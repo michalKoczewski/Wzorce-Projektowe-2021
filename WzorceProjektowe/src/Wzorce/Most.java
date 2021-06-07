@@ -35,13 +35,13 @@ class MostAbstrakcjaPochodna extends MostAbstrakcja {
 class SpecyficznyMost extends Most {
     @Override
     public void MostImplementacja() {
-        System.out.print("SpecyficznyMost MostImplementacja");
+        System.out.println("SpecyficznyMost MostImplementacja");
     }
 }
 
 class InnyMost extends Most {
     @Override
     public void MostImplementacja() {
-        System.out.print("InnyMost MostImplementacja");
+        System.out.println("InnyMost MostImplementacja");
     }           
 }

@@ -9,7 +9,7 @@ package Wzorce;
  *
  * @author kubap
  */
-abstract class Computer {
+abstract class Komputer {
     public abstract String getRAM();
     public abstract String getHDD();
     public abstract String getCPU();
@@ -20,7 +20,7 @@ abstract class Computer {
     }  
 }
 
-class PC extends Computer {
+class PC extends Komputer {
     private String ram;
     private String hdd;
     private String cpu;
@@ -47,12 +47,12 @@ class PC extends Computer {
     }  
 }
 
-class Server extends Computer {
+class Serwer extends Komputer {
     private String ram;
     private String hdd;
     private String cpu;
     
-    public Server(String ram, String hdd, String cpu){
+    public Serwer(String ram, String hdd, String cpu){
         this.ram = ram;
         this.hdd = hdd;
         this.cpu = cpu;
@@ -72,4 +72,13 @@ class Server extends Computer {
     public String getCPU() {
         return this.cpu;
     }  
+}
+
+class KomputerFabryka {
+    public static Komputer stworzKomputer(String typ, String ram, String hdd, String cpu){
+        if("PC".equalsIgnoreCase(typ)) return new PC(ram, hdd, cpu);
+        else if("Serwer".equalsIgnoreCase(typ)) return new Serwer(ram, hdd, cpu);
+        
+        return null;
+    }
 }
